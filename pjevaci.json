@@ -1,0 +1,197 @@
+[
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"Thriller",
+             "datum_izdanja_albuma":"1982-11-29"
+          }
+       ],
+       "ime_pjevaca":"Michael Joseph",
+       "naziv_zanra":"pop",
+       "datum_rodenja":"1958-08-29",
+       "drzava_rodenja":"US",
+       "prezime_pjevaca":"Jackson",
+       "diskografska_kuca":"Motown",
+       "broj_albuma_pjevaca":10,
+       "broj_grammy_nagrada":13,
+       "broj_prodanih_albuma":500.00
+    },
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"I Wanna Dance with Somebody",
+             "datum_izdanja_albuma":"2022-12-16"
+          }
+       ],
+       "ime_pjevaca":"Whitney Elizabeth",
+       "naziv_zanra":"pop",
+       "datum_rodenja":"1963-08-09",
+       "drzava_rodenja":"US",
+       "prezime_pjevaca":"Houston",
+       "diskografska_kuca":"Arista Records",
+       "broj_albuma_pjevaca":7,
+       "broj_grammy_nagrada":6,
+       "broj_prodanih_albuma":220.00
+    },
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"EDM",
+             "naziv_albuma":"ARTPOP",
+             "datum_izdanja_albuma":"2013-11-06"
+          }
+       ],
+       "ime_pjevaca":"Stefani Joanne Angelina",
+       "naziv_zanra":"pop",
+       "datum_rodenja":"1986-03-28",
+       "drzava_rodenja":"US",
+       "prezime_pjevaca":"Germanotta",
+       "diskografska_kuca":"Interscope Records and KonLive Distribution",
+       "broj_albuma_pjevaca":5,
+       "broj_grammy_nagrada":13,
+       "broj_prodanih_albuma":170.00
+    },
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"Lover",
+             "datum_izdanja_albuma":"2019-08-23"
+          },
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"Midnights",
+             "datum_izdanja_albuma":"2022-10-21"
+          },
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"Red",
+             "datum_izdanja_albuma":"2012-10-22"
+          }
+       ],
+       "ime_pjevaca":"Taylor Alison",
+       "naziv_zanra":"pop",
+       "datum_rodenja":"1989-12-13",
+       "drzava_rodenja":"US",
+       "prezime_pjevaca":"Swift",
+       "diskografska_kuca":"Republic Big Machine",
+       "broj_albuma_pjevaca":11,
+       "broj_grammy_nagrada":14,
+       "broj_prodanih_albuma":114.00
+    },
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"21",
+             "datum_izdanja_albuma":"2011-01-24"
+          },
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"25",
+             "datum_izdanja_albuma":"2015-11-20"
+          }
+       ],
+       "ime_pjevaca":"Adele Laurie Blue",
+       "naziv_zanra":"pop",
+       "datum_rodenja":"1988-05-05",
+       "drzava_rodenja":"UK",
+       "prezime_pjevaca":"Adkins",
+       "diskografska_kuca":"Columbia Records",
+       "broj_albuma_pjevaca":4,
+       "broj_grammy_nagrada":16,
+       "broj_prodanih_albuma":120.00
+    },
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"Harrys House",
+             "datum_izdanja_albuma":"2022-05-20"
+          }
+       ],
+       "ime_pjevaca":"Harry Edward",
+       "naziv_zanra":"pop",
+       "datum_rodenja":"1994-02-01",
+       "drzava_rodenja":"UK",
+       "prezime_pjevaca":"Styles",
+       "diskografska_kuca":"Columbia Records",
+       "broj_albuma_pjevaca":3,
+       "broj_grammy_nagrada":3,
+       "broj_prodanih_albuma":15.27
+    },
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"Anti",
+             "datum_izdanja_albuma":"2016-01-28"
+          }
+       ],
+       "ime_pjevaca":"Robyn Rihanna",
+       "naziv_zanra":"R&B",
+       "datum_rodenja":"1988-02-20",
+       "drzava_rodenja":"Barbados",
+       "prezime_pjevaca":"Fenty",
+       "diskografska_kuca":"Roc Nation",
+       "broj_albuma_pjevaca":8,
+       "broj_grammy_nagrada":9,
+       "broj_prodanih_albuma":60.00
+    },
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"R&B",
+             "naziv_albuma":"Lemonade",
+             "datum_izdanja_albuma":"2016-04-23"
+          }
+       ],
+       "ime_pjevaca":"Beyonce Giselle",
+       "naziv_zanra":"R&B",
+       "datum_rodenja":"1981-09-04",
+       "drzava_rodenja":"US",
+       "prezime_pjevaca":"Knowles Carter",
+       "diskografska_kuca":"Parkwood Columbia Music World",
+       "broj_albuma_pjevaca":8,
+       "broj_grammy_nagrada":32,
+       "broj_prodanih_albuma":200.00
+    },
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"pop",
+             "naziv_albuma":"Shakira",
+             "datum_izdanja_albuma":"2014-03-21"
+          }
+       ],
+       "ime_pjevaca":"Shakira Isabel Mebarak",
+       "naziv_zanra":"Latin pop",
+       "datum_rodenja":"1977-02-02",
+       "drzava_rodenja":"Colombia",
+       "prezime_pjevaca":"Ripoll",
+       "diskografska_kuca":"Sony BMG",
+       "broj_albuma_pjevaca":12,
+       "broj_grammy_nagrada":3,
+       "broj_prodanih_albuma":100.00
+    },
+    {
+       "albumi":[
+          {
+             "zanr_albuma":"pop rock",
+             "naziv_albuma":"Wildest Dreams",
+             "datum_izdanja_albuma":"1996-04-22"
+          }
+       ],
+       "ime_pjevaca":"Anna Mae",
+       "naziv_zanra":"Rock and roll",
+       "datum_rodenja":"1939-11-26",
+       "drzava_rodenja":"US",
+       "prezime_pjevaca":"Bullock",
+       "diskografska_kuca":"Warner Bros. Records",
+       "broj_albuma_pjevaca":9,
+       "broj_grammy_nagrada":8,
+       "broj_prodanih_albuma":150.00
+    }
+ ]

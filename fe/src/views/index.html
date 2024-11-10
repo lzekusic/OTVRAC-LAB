@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="Skup podataka o pjevačima">
+    <meta name="description"
+        content="Ovaj skup sadrži podatke o poznatim pjevačima. Neke od informacija su ime, prezime i datum rođenja pjevača, najzastupljeniji žanr, država rođenja, broj izdanih studio albuma i podatke o nekima od albuma. 
+        Ovi podatci su korisni bilo kojem ljubitelju glazbe koji želi saznati više o svojem omiljenom umjetniku.">
+    <meta name="author" content="Lana Zekušić">
+    <title>Skup podataka o pjevačima</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Skup podataka o pjevačima</h1>
+            <p>Ovaj skup sadrži podatke o poznatim pjevačima. <br>
+                Neke od informacija su ime, prezime i datum rođenja pjevača, najzastupljeniji žanr, država rođenja, broj izdanih studio albuma i podatke o nekima od albuma. 
+                <br>Ovi podatci su korisni bilo kojem ljubitelju glazbe koji želi saznati više o svojem omiljenom umjetniku.</p>
+        </header>
+
+        <section class="downloads">
+            <h2>Podatke možete preuzeti u CSV ili JSON formatu:</h2>
+            <ul>
+                <li><a href="/pjevaci.csv" download>Preuzmi CSV format</a></li>
+                <li><a href="/pjevaci.json" download>Preuzmi JSON format</a></li>
+            </ul>
+        </section>
+
+        <section class="datatable">
+            <h2>Tablični pregled:</h2>
+            <p>Tablični pregled i filtriranje su dostupni na: <a href="datatable"> link </a>.</p>
+        </section>
+        <br>
+        <section class="metadata">
+            <h2>Metapodaci</h2>
+            <ul>
+                <li><strong>Licenca:</strong> <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></li>
+                <li><strong>Autor:</strong> Lana Zekušić</li>
+                <li><strong>Verzija:</strong> 1.0</li>
+                <li><strong>Jezik:</strong> Hrvatski</li>
+                <li><strong>Datum izdanja:</strong> 27. listopada 2024.</li>
+                <li><strong>Izvor podataka:</strong> Javno dostupni izvori: službene web stranice pjevača</li>
+                <li><strong>Geografska pokrivenost:</strong> Globalna, sadrži podatke o pjevačima iz raznih zemalja svijeta</li>
+                <li><strong>Granice podataka:</strong> Podaci su ograničeni na javno dostupne informacije</li>
+                <li><strong>Vrijeme prikupljanja podataka:</strong> Podaci prikupljeni tijekom listopada 2024. godine</li>
+            </ul>
+        </section>
+
+        <section class="attributes">
+            <h2>Opis atributa</h2>
+            <table>
+                <tr>
+                    <th>Atribut</th>
+                    <th>Opis</th>
+                </tr>
+                <tr>
+                    <td>first_name</td>
+                    <td>Ime pjevača</td>
+                </tr>
+                <tr>
+                    <td>last_name</td>
+                    <td>Prezime pjevača</td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td>Datum rođenja</td>
+                </tr>
+                <tr>
+                    <td>genre_name</td>
+                    <td>Žanr u kojem najčešće pjevači pjevaju</td>
+                </tr>
+                <tr>
+                    <td>country_of_birth</td>
+                    <td>Država rođenja</td>
+                </tr>
+                <tr>
+                    <td>num_of_albums</td>
+                    <td>Broj izdanih studio albuma</td>
+                </tr>
+                <tr>
+                    <td>label_name</td>
+                    <td>Ime diskografske kuće s kojom pjevači surađuju</td>
+                </tr>
+                <tr>
+                    <td>num_of_grammys</td>
+                    <td>Broj osvojenih Grammy nagrada</td>
+                </tr>
+                <tr>
+                    <td>albums_sold</td>
+                    <td>Broj prodanih albuma (zapisano u milijunima)</td>
+                </tr>
+                <tr>
+                    <td>albums</td>
+                    <td>Sadrži podatke o albumima: ime albuma, datum izdavanja, žanr albuma</td>
+                </tr>
+            </table>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://localhost:3000/pjevaci.json",
+    "type": "array",
+    "default": [],
+    "title": "Pjevaci",
+    "description": "Skup podataka o poznatim pjevacima",
+    "items": {
+        "type": "object",
+        "title": "Pjevaci",
+        "description": "Objekt s podacima o jednom pjevacu",
+        "required": [
+            "albumi",
+            "ime_pjevaca",
+            "naziv_zanra",
+            "datum_rodenja",
+            "drzava_rodenja",
+            "prezime_pjevaca",
+            "diskografska_kuca",
+            "broj_albuma_pjevaca",
+            "broj_grammy_nagrada",
+            "broj_prodanih_albuma"
+        ],
+        "properties": {
+            "albumi": {
+                "type": "array",
+                "title": "Albumi pjevaca",
+                "description": "Informacije o albumima",
+                "items": {
+                    "type": "object",
+                    "title": "Album",
+                    "description": "Informacije o albumu",
+                    "required": [
+                        "zanr_albuma",
+                        "naziv_albuma",
+                        "datum_izdanja_albuma"
+                    ],
+                    "properties": {
+                        "zanr_albuma": {
+                            "type": "string",
+                            "title": "zanr albuma",
+                            "description": "zanr albuma"
+                        },
+                        "naziv_albuma": {
+                            "type": "string",
+                            "title": "naziv albuma",
+                            "description": "naziv albuma"
+                        },
+                        "datum_izdanja_albuma": {
+                            "type": "string",
+                            "title": "datum izdanja",
+                            "description": "datum kada je album izdan"
+                        }
+                    }
+                }
+            },
+            "ime_pjevaca": {
+                "type": "string",
+                "title": "ime pjevaca",
+                "description": "ime pjevaca"
+            },
+            "naziv_zanra": {
+                "type": "string",
+                "title": "naziv zanra",
+                "description": "naziv zanra u kojem pjevac pjeva"
+            },
+            "datum_rodenja": {
+                "type": "string",
+                "title": "datum rodenja",
+                "description": "datum rodenja pjevaca"
+            },
+            "drzava_rodenja": {
+                "type": "string",
+                "title": "drzava rodenja",
+                "description": "drzava u kojoj je pjevac roden"
+            },
+            "prezime_pjevaca": {
+                "type": "string",
+                "title": "prezime pjevaca",
+                "description": "prezime pjevaca"
+            },
+            "diskografska_kuca": {
+                "type": "string",
+                "title": "diskografska kuca",
+                "description": "diskografska kuca pjevaca"
+            },
+            "broj_albuma_pjevaca": {
+                "type": "integer",
+                "title": "broj albuma pjevaca",
+                "description": "broj izdanih studio albuma"
+            },
+            "broj_grammy_nagrada": {
+                "type": "integer",
+                "title": "broj grammy nagrada",
+                "description": "broj osvojenih grammy nagrada"
+            },
+            "broj_prodanih_albuma": {
+                "type": "number",
+                "title": "broj prodanih albuma",
+                "description": "broj prodanih albuma u milijunima"
+            }
+        }
+    }
+}

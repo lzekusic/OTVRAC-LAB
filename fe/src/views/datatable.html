@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatable</title>
+    <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+</head>
+
+<body>
+    <div id="filter">
+        <label for="column-select">Filtriranje po stupcima:</label>
+        <select id="column-select">
+            <option value="all">Svi stupci</option>
+            <option value="ime_pjevaca">Ime pjevača</option>
+            <option value="prezime_pjevaca">Prezime pjevača</option>
+            <option value="datum_rodenja">Datum rođenja pjevača</option>
+            <option value="zanr">Žanr pjevača</option>
+            <option value="drzava_rodenja">Država rođenja pjevača</option>
+            <option value="broj_albuma_pjevaca">Broj albuma pjevača</option>
+            <option value="diskografska_kuca">Diskografska kuća</option>
+            <option value="broj_grammy_nagrada">Broj Grammy nagrada</option>
+            <option value="broj_prodanih_albuma">Broj prodanih albuma</option>
+            <option value="naziv_albuma">Naziv albuma</option>
+            <option value="datum_izdanja_albuma">Datum izdanja albuma</option>
+            <option value="zanr_albuma">Žanr albuma</option>
+        </select>
+        <input type="text" id="search-input" placeholder="Upišite vrijednost" />
+        <button id="export-csv">Export CSV</button>
+        <button id="export-json">Export JSON</button>
+    </div>
+
+    <div id="grid-table"></div>
+
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

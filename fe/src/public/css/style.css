@@ -1,0 +1,191 @@
+/* za datatable*/
+
+.gridjs-td {
+    white-space: normal; 
+    word-wrap: break-word; 
+    max-width: 150px; 
+}
+
+
+#filter {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+
+label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #333;
+}
+
+
+select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 200px;
+    background-color: #fafafa;
+}
+
+
+#search-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 200px;
+    background-color: #fafafa;
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #1a5276;
+    color: white;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1c658c;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+
+/*za index*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.header {
+    background-color: #1a5276;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+
+.downloads {
+    margin-bottom: 30px;
+}
+
+.downloads h2 {
+    font-size: 1.8rem;
+    color: black;
+}
+
+.downloads ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.downloads li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.downloads a {
+    color: #2980B9;
+    text-decoration: none;
+}
+
+.downloads a:hover {
+    text-decoration: underline;
+}
+
+
+
+.datatable {
+    margin-top: 30px;
+}
+
+.datatable h2 {
+    font-size: 1.8rem;
+    color: black;
+}
+
+.datatable p {
+    font-size: 1 rem;
+    margin-top: 10px;
+}
+
+.datatable a {
+    color: #2980B9;
+    text-decoration: none;
+}
+
+.datatable a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.attributes table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.attributes th, .attributes td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.attributes th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.attributes td {
+    background-color: #fff;
+}
+
+
+.attributes tr:hover {
+    background-color: #f1f1f1;
+}
+

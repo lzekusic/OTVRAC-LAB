@@ -1,0 +1,319 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Musicians API",
+    "description": "API for managing a database of artists and their albums",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Lana Zekusic",
+      "email": "lana.zekusic@fer.hr"
+    },
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Redirect to artists endpoint",
+        "description": "Redirects the user to the `/artists` endpoint.",
+        "responses": {
+          "302": {
+            "description": "Redirect to /artists"
+          }
+        }
+      }
+    },
+    "/artists": {
+      "get": {
+        "summary": "Get all artists",
+        "description": "Fetches all artists in the database.",
+        "responses": {
+          "200": {
+            "description": "List of artists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Artist"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new artist",
+        "description": "Creates a new artist and stores them in the database.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ArtistInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Artist created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Artist"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/artists/{id}": {
+      "get": {
+        "summary": "Get an artist by ID",
+        "description": "Fetches details of an artist by their ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the artist",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Artist details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Artist"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Artist not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an artist",
+        "description": "Updates an artist's details.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the artist",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ArtistInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Artist updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Artist"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Artist not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an artist",
+        "description": "Deletes an artist by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the artist",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Artist deleted successfully"
+          },
+          "404": {
+            "description": "Artist not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/artists/{id}/albums": {
+      "get": {
+        "summary": "Get albums by artist ID",
+        "description": "Fetches all albums associated with an artist by their ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the artist",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of albums",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Album"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new album for an artist",
+        "description": "Creates a new album for a specified artist by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the artist",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AlbumInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Album created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Album"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Artist": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "first_name": { "type": "string" },
+          "last_name": { "type": "string" },
+          "dob": { "type": "string", "format": "date" },
+          "genre_id": { "type": "integer" },
+          "country_of_birth": { "type": "string" },
+          "num_of_albums": { "type": "integer" },
+          "label_id": { "type": "integer" },
+          "num_of_grammys": { "type": "integer" },
+          "albums_sold": { "type": "integer" }
+        }
+      },
+      "ArtistInput": {
+        "type": "object",
+        "properties": {
+          "first_name": { "type": "string" },
+          "last_name": { "type": "string" },
+          "dob": { "type": "string", "format": "date" },
+          "genre_id": { "type": "integer" },
+          "country_of_birth": { "type": "string" },
+          "num_of_albums": { "type": "integer" },
+          "label_id": { "type": "integer" },
+          "num_of_grammys": { "type": "integer" },
+          "albums_sold": { "type": "integer" }
+        }
+      },
+      "Album": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "artist_id": { "type": "integer" },
+          "album_title": { "type": "string" },
+          "release_date": { "type": "string", "format": "date" },
+          "genre_id": { "type": "integer" },
+          "label_id": { "type": "integer" }
+        }
+      },
+      "AlbumInput": {
+        "type": "object",
+        "properties": {
+          "album_title": { "type": "string" },
+          "release_date": { "type": "string", "format": "date" },
+          "genre_id": { "type": "integer" },
+          "label_id": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

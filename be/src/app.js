@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const { fetchMusicians } = require('./database');
 const cors = require('cors');
+const { transformMusicianDataToJson, convertToCSV } = require('./convert-functions');
 
 const app = express();
 app.use(cors());
@@ -13,6 +14,28 @@ app.get('/fetchMusicians', async (req, res) => {
     try {
         const data = await fetchMusicians();
         res.json(data);
+    } catch (error) {
+        console.error('Error fetching musicians data:', error);
+        res.status(500).json({ error: 'Failed to fetch musicians data' });
+    }
+});
+
+app.get('/pjevaciCsv', async (req, res) => {
+    try {
+        const data = await fetchMusicians();
+        const csvData = convertToCSV(data);
+        res.json(csvData);
+    } catch (error) {
+        console.error('Error fetching musicians data:', error);
+        res.status(500).json({ error: 'Failed to fetch musicians data' });
+    }
+});
+
+app.get('/pjevaciJson', async (req, res) => {
+    try {
+        const data = await fetchMusicians();
+        const csvData = transformMusicianDataToJson(data);
+        res.json(csvData);
     } catch (error) {
         console.error('Error fetching musicians data:', error);
         res.status(500).json({ error: 'Failed to fetch musicians data' });

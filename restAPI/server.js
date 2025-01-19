@@ -184,6 +184,74 @@ app.get('/api-docs', (req, res) => {
   }
 });
 
+
+// GET - jsonLD
+app.get('/jsonLD', async (req, res) => {
+  try {
+    const result = await pool.query(`
+      SELECT 
+        artists.id AS artist_id,
+        artists.first_name,
+        artists.last_name,
+        artists.dob,
+        genres.genre_name,
+        artists.country_of_birth,
+        artists.num_of_albums,
+        artists.num_of_grammys,
+        artists.albums_sold,
+        albums.id AS album_id,
+        albums.album_title,
+        albums.release_date
+      FROM artists
+      LEFT JOIN genres ON artists.genre_id = genres.id
+      LEFT JOIN albums ON artists.id = albums.artist_id
+    `);
+
+    const groupedArtists = result.rows.reduce((acc, row) => {
+      let artist = acc.find((a) => a.artist_id === row.artist_id);
+
+      if (!artist) {
+        artist = {
+          "@context": {
+            "@vocab": "http://schema.org/",
+            "first_name": "givenName",
+            "last_name": "familyName",
+          },
+          "@type": "Person",
+          artist_id: row.artist_id,
+          first_name: row.first_name,
+          last_name: row.last_name,
+          dob: row.dob,
+          genre: row.genre_name,
+          country_of_birth: row.country_of_birth,
+          num_of_albums: row.num_of_albums,
+          num_of_grammys: row.num_of_grammys,
+          albums_sold: row.albums_sold,
+          albums: [], 
+        };
+        acc.push(artist);
+      }
+
+      if (row.album_id) {
+        artist.albums.push({
+          album_id: row.album_id,
+          album_title: row.album_title,
+          release_date: row.release_date,
+        });
+      }
+
+      return acc;
+    }, []);
+
+    res.status(200).json(createResponse('success', 'Successfully fetched', 200, groupedArtists));
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(createResponse('error', 'Internal Server Error', 500));
+  }
+});
+
+
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

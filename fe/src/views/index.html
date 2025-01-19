@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="title" content="Skup podataka o pjevačima">
-    <meta name="description"
-        content="Ovaj skup sadrži podatke o poznatim pjevačima. Neke od informacija su ime, prezime i datum rođenja pjevača, najzastupljeniji žanr, država rođenja, broj izdanih studio albuma i podatke o nekima od albuma. 
+    <meta name="description" content="Ovaj skup sadrži podatke o poznatim pjevačima. Neke od informacija su ime, prezime i datum rođenja pjevača, najzastupljeniji žanr, država rođenja, broj izdanih studio albuma i podatke o nekima od albuma. 
         Ovi podatci su korisni bilo kojem ljubitelju glazbe koji želi saznati više o svojem omiljenom umjetniku.">
     <meta name="author" content="Lana Zekušić">
     <title>Skup podataka o pjevačima</title>
@@ -18,8 +17,10 @@
         <header class="header">
             <h1>Skup podataka o pjevačima</h1>
             <p>Ovaj skup sadrži podatke o poznatim pjevačima. <br>
-                Neke od informacija su ime, prezime i datum rođenja pjevača, najzastupljeniji žanr, država rođenja, broj izdanih studio albuma i podatke o nekima od albuma. 
-                <br>Ovi podatci su korisni bilo kojem ljubitelju glazbe koji želi saznati više o svojem omiljenom umjetniku.</p>
+                Neke od informacija su ime, prezime i datum rođenja pjevača, najzastupljeniji žanr, država rođenja, broj
+                izdanih studio albuma i podatke o nekima od albuma.
+                <br>Ovi podatci su korisni bilo kojem ljubitelju glazbe koji želi saznati više o svojem omiljenom
+                umjetniku.</p>
         </header>
 
         <section class="downloads">
@@ -27,6 +28,7 @@
             <ul>
                 <li><a href="/pjevaci.csv" download>Preuzmi CSV format</a></li>
                 <li><a href="/pjevaci.json" download>Preuzmi JSON format</a></li>
+                <div id="auth-buttons"></div>
             </ul>
         </section>
 
@@ -38,15 +40,18 @@
         <section class="metadata">
             <h2>Metapodaci</h2>
             <ul>
-                <li><strong>Licenca:</strong> <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></li>
+                <li><strong>Licenca:</strong> <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+                        Attribution 4.0 International (CC BY 4.0)</a></li>
                 <li><strong>Autor:</strong> Lana Zekušić</li>
                 <li><strong>Verzija:</strong> 1.0</li>
                 <li><strong>Jezik:</strong> Hrvatski</li>
                 <li><strong>Datum izdanja:</strong> 27. listopada 2024.</li>
                 <li><strong>Izvor podataka:</strong> Javno dostupni izvori: službene web stranice pjevača</li>
-                <li><strong>Geografska pokrivenost:</strong> Globalna, sadrži podatke o pjevačima iz raznih zemalja svijeta</li>
+                <li><strong>Geografska pokrivenost:</strong> Globalna, sadrži podatke o pjevačima iz raznih zemalja
+                    svijeta</li>
                 <li><strong>Granice podataka:</strong> Podaci su ograničeni na javno dostupne informacije</li>
-                <li><strong>Vrijeme prikupljanja podataka:</strong> Podaci prikupljeni tijekom listopada 2024. godine</li>
+                <li><strong>Vrijeme prikupljanja podataka:</strong> Podaci prikupljeni tijekom listopada 2024. godine
+                </li>
             </ul>
         </section>
 
@@ -103,4 +108,26 @@
     </div>
 
 </body>
+<script>
+    fetch('/auth-status')
+        .then(response => response.json())
+        .then(data => {
+            const authButtonsDiv = document.getElementById('auth-buttons');
+            if (data.isAuthenticated) {
+                authButtonsDiv.innerHTML = `
+                    <a href="/logout" class="btn">Odjava</a>
+                    <a href="/profile" class="btn">Profil</a>
+                    <p><a href="/refresh">Osvježi preslike</a></p>
+                `;
+            } else {
+                authButtonsDiv.innerHTML = `
+                    <a href="/login" class="btn">Prijava</a>
+                `;
+            }
+        })
+        .catch(error => {
+            console.error('Greška pri dohvaćanju statusa prijave:', error);
+        });
+</script>
+
 </html>
